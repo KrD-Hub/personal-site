@@ -29,18 +29,18 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
+    name: 'Head of Neuro Intervention Unit',
     description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
+      'Leading specialized team for advanced neurointerventional procedures at Hospital Boa Nova.',
+    link: '#',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
     id: 'project1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
+    name: 'Head of BCI and Neuroimaging AI Unit',
+    description: 'Research on brain imaging techniques and development of brain-computer interfaces.',
+    link: '#',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
     id: 'project2',
@@ -49,71 +49,118 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Hospital Boa Nova Trofa Saúde, Porto, Portugal',
+    title: 'Head of Neuro Intervention Unit',
+    start: '2019',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: '#',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'Centro Hospitalar Universitário São João, Porto, Portugal',
+    title: 'Assistant Physician, Neuroradiology Department',
+    start: '2018',
+    end: 'Present',
+    link: '#',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
+    company: 'Centro Hospitalar e Universitário de Coimbra, Coimbra, Portugal',
+    title: 'Assistant Physician, Neuroradiology Department',
     start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    end: '2018',
+    link: '#',
     id: 'work3',
+  },
+  {
+    company: 'Harvard Medical School',
+    title: 'Clinical Scholars Research Training Program',
+    start: '2017',
+    end: '2019',
+    link: '#',
+    id: 'work4',
+  },
+  {
+    company: 'Hopital Erasme',
+    title: 'Fellowship in Endovascular Neurosurgery',
+    start: '2014',
+    end: '2016',
+    link: '#',
+    id: 'work5',
+  },
+  {
+    company: 'Centre for innovative biomedicine and biotechnology (CIBB), Coimbra, Portugal',
+    title: 'Researcher, Neuroimaging Team Leader',
+    start: '2021',
+    end: 'Present',
+    link: '#',
+    id: 'work6',
+  },
+]
+
+export const ONGOING_STUDIES = [
+  {
+    institution: 'Universidade de Coimbra, Coimbra, Portugal',
+    degree: 'Ph.D.',
+    field: 'Medicine',
+    start: '2020',
+    end: '2025 (expected)',
+    id: 'edu1',
+  },
+  {
+    institution: 'Universidade do Porto, Porto, Portugal',
+    degree: 'Bachelor',
+    field: 'Engineering and Computer Science',
+    start: '2021',
+    end: 'Present',
+    id: 'edu2',
   },
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
+    title: 'Neural Correlates of Consciousness and Artificial Intelligence',
+    description: 'Research on parallel processing mechanisms in human brains and neural networks',
+    link: '/scientific-work/neural-correlates-consciousness-ai',
+    uid: 'sci-1',
   },
   {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
+    title: 'Computational Models for Neurological Disorders',
+    description: 'Novel AI approaches for early diagnosis of neurodegenerative diseases',
+    link: '/scientific-work/computational-models-neurological-disorders',
+    uid: 'sci-2',
   },
   {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
+    title: 'Co-Advisor, PhD Thesis',
+    description: 'Distributed Neuroimaging Assessment Using High-Performance Computing to Discover Dementia Biomarkers (INESC TEC, Porto)',
+    link: '#',
+    uid: 'sci-3',
+  },
+  {
+    title: 'Co-Advisor, Master\'s Thesis',
+    description: 'Brain Volumetric and Connectivity Biomarkers in Hypertension Patients (INESC TEC, Porto)',
+    link: '#',
+    uid: 'sci-4',
+  },
+  {
+    title: 'Co-Advisor, Master\'s Thesis',
+    description: 'Evaluation of endovascular treatment results of intracranial aneurysms with the Leo stent (Hospital Erasme, Brussels)',
+    link: '#',
+    uid: 'sci-5',
+  },
+  {
+    title: 'Alzheimer\'s Permeability Research',
+    description: 'Investigating blood-brain barrier permeability in Alzheimer\'s disease progression',
+    link: '#',
+    uid: 'sci-6',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    label: 'Github',
-    link: 'https://github.com/ibelick',
-  },
-  {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
-  },
-  {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
-  },
+    link: 'https://www.linkedin.com/in/ricardo-m-2154b16b/',
+  }
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'ricardofelixmorais@gmail.com'
