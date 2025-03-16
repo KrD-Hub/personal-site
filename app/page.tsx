@@ -100,6 +100,54 @@ function ProjectVideo({ src }: ProjectVideoProps) {
   )
 }
 
+// Componente para projetos com imagens estáticas
+type ProjectImageProps = {
+  src: string
+  alt: string
+}
+
+function ProjectImage({ src, alt }: ProjectImageProps) {
+  return (
+    <MorphingDialog
+      transition={{
+        type: 'spring',
+        bounce: 0,
+        duration: 0.3,
+      }}
+    >
+      <MorphingDialogTrigger>
+        <img
+          src={src}
+          alt={alt}
+          className="aspect-video w-full cursor-zoom-in rounded-xl object-cover"
+        />
+      </MorphingDialogTrigger>
+      <MorphingDialogContainer>
+        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+          <img
+            src={src}
+            alt={alt}
+            className="aspect-video h-[50vh] w-full rounded-xl object-contain md:h-[70vh]"
+          />
+        </MorphingDialogContent>
+        <MorphingDialogClose
+          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+          variants={{
+            initial: { opacity: 0 },
+            animate: {
+              opacity: 1,
+              transition: { delay: 0.3, duration: 0.1 },
+            },
+            exit: { opacity: 0, transition: { duration: 0 } },
+          }}
+        >
+          <XIcon className="h-5 w-5 text-zinc-500" />
+        </MorphingDialogClose>
+      </MorphingDialogContainer>
+    </MorphingDialog>
+  )
+}
+
 function MagneticSocialLink({
   children,
   link,
@@ -187,11 +235,15 @@ export default function Personal() {
         className="mt-10"
       >
         <h3 className="mb-3 text-lg font-medium">Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
           {PROJECTS.map((project, index) => (
             <div key={project.name} className="space-y-2 group">
               <div className="relative rounded-xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                {project.type === 'video' && project.video ? (
+                  <ProjectVideo src={project.video} />
+                ) : project.type === 'image' && project.image ? (
+                  <ProjectImage src={project.image} alt={project.imageAlt || project.name} />
+                ) : null}
               </div>
               <div>
                 <a
@@ -202,9 +254,7 @@ export default function Personal() {
                   {project.name}
                 </a>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  {index === 0 ? 
-                    "Leading specialized team for neurointerventional procedures." : 
-                    "Research on brain imaging and development of brain-computer interfaces."}
+                  {project.description}
                 </p>
               </div>
             </div>
@@ -261,7 +311,7 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-3 text-lg font-medium">Ongoing Research</h3>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-2">
           {BLOG_POSTS.filter(post => 
             post.uid === 'sci-3' || post.uid === 'sci-4' || post.uid === 'sci-6'
           ).map((post) => {

@@ -2,7 +2,10 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  video?: string
+  image?: string
+  imageAlt?: string
+  type: 'video' | 'image'
   id: string
 }
 
@@ -29,21 +32,41 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Head of Neuro Intervention Unit',
+    name: 'Brain-Computer Interface Research',
     description:
-      'Leading specialized team for advanced neurointerventional procedures at Hospital Boa Nova.',
+      'Advanced research on neural interfaces and brain mapping technologies.',
     link: '#',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    image: '/images/neuro1.avif',
+    imageAlt: 'Neural network visualization with brain connections',
+    type: 'image',
     id: 'project1',
   },
   {
-    name: 'Head of BCI and Neuroimaging AI Unit',
-    description: 'Research on brain imaging techniques and development of brain-computer interfaces.',
+    name: 'AI Neuroimaging Analysis',
+    description: 'Development of AI models for image analysis.',
     link: '#',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    image: '/images/neuro3.jpg',
+    imageAlt: 'AI analysis of brain scans and neural pathways',
+    type: 'image',
     id: 'project2',
+  },
+  {
+    name: 'Cognitive Science Research',
+    description: 'Exploring the intersection of human cognition and artificial intelligence.',
+    link: '#',
+    image: '/images/neuro11.jpg',
+    imageAlt: 'Abstract visualization of cognitive processes and neural networks',
+    type: 'image',
+    id: 'project3',
+  },
+  {
+    name: 'Neurointerventional Procedures',
+    description: 'Leading specialized team for advanced neurointerventional treatments.',
+    link: '#',
+    image: '/images/neuro8.jpg',
+    imageAlt: 'High-precision brain imaging and intervention',
+    type: 'image',
+    id: 'project4',
   },
 ]
 

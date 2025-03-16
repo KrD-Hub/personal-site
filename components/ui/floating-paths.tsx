@@ -9,7 +9,7 @@ function FloatingPaths({ position, mousePosition }: { position: number, mousePos
     // Create a more subtle, darker color palette
     const baseHue = 220; // Blue base for a professional look
     const hue = (baseHue + index * 10 + mousePosition.x * 0.05) % 360
-    return `hsla(${hue}, 70%, 45%, 0.07)`
+    return `hsla(${hue}, 100%, 50%, 0.25)`
   }
 
   const paths = Array.from({ length: 24 }, (_, i) => {
@@ -44,18 +44,19 @@ function FloatingPaths({ position, mousePosition }: { position: number, mousePos
             d={path.d}
             stroke={path.color}
             strokeWidth={path.width}
-            strokeOpacity={0.08 + path.id * 0.01}
-            initial={{ pathLength: 0.3, opacity: 0 }}
+            strokeOpacity={0.3 + path.id * 0.03}
+            initial={{ pathLength: 0, opacity: 0 }}
             animate={{
-              pathLength: 1,
-              opacity: [0, 0.6, 0],
-              pathOffset: [0, 1, 0],
+              pathLength: [0, 1],
+              opacity: [0, 1, 1, 0],
+              pathOffset: [0, 1],
             }}
             transition={{
-              duration: 20 + Math.random() * 15, // Slower animation
+              duration: 15 + Math.random() * 5, // 15-20 segundos de duração
               repeat: Number.POSITIVE_INFINITY,
-              repeatDelay: 10 + Math.random() * 15, // Long pause between animations
-              ease: "linear",
+              repeatDelay: 130 + Math.random() * 50, // 130-180 segundos (2.16-3 minutos) entre aparições
+              times: [0, 0.4, 0.9, 1], // Controlling the timing of opacity changes
+              ease: [0.25, 0.1, 0.25, 1], // Easing for a wind-like effect
             }}
           />
         ))}
