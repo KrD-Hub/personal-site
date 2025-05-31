@@ -182,7 +182,7 @@ export const BLOG_POSTS: BlogPost[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ricardo-m-2154b16b/',
+    link: 'https://www.linkedin.com/in/ricardofelixmorais',
   }
 ]
 
