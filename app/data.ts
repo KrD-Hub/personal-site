@@ -30,6 +30,16 @@ type SocialLink = {
   link: string
 }
 
+type CompletedEducation = {
+  institution: string
+  degree: string
+  field?: string
+  start: string
+  end: string
+  description?: string
+  id: string
+}
+
 export const PROJECTS: Project[] = [
   {
     name: 'Brain-Computer Interface Research',
@@ -88,6 +98,22 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work2',
   },
   {
+    company: 'Institute for Systems and Computer Engineering, Technology and Science (INESC TEC), Porto, Portugal',
+    title: 'Researcher in Biomedical Engineering',
+    start: '2022',
+    end: 'Present',
+    link: '#',
+    id: 'work7',
+  },
+  {
+    company: 'Centre for innovative biomedicine and biotechnology (CIBB), Coimbra, Portugal',
+    title: 'Researcher, Neuroimaging Team Leader',
+    start: '2021',
+    end: 'Present',
+    link: '#',
+    id: 'work6',
+  },
+  {
     company: 'Centro Hospitalar e Universitário de Coimbra, Coimbra, Portugal',
     title: 'Assistant Physician, Neuroradiology Department',
     start: '2017',
@@ -111,14 +137,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     link: '#',
     id: 'work5',
   },
-  {
-    company: 'Centre for innovative biomedicine and biotechnology (CIBB), Coimbra, Portugal',
-    title: 'Researcher, Neuroimaging Team Leader',
-    start: '2021',
-    end: 'Present',
-    link: '#',
-    id: 'work6',
-  },
 ]
 
 export const ONGOING_STUDIES = [
@@ -137,6 +155,45 @@ export const ONGOING_STUDIES = [
     start: '2021',
     end: 'Present',
     id: 'edu2',
+  },
+  {
+    institution: 'Universidade do Porto, Porto, Portugal',
+    degree: 'Bachelor',
+    field: 'Computer Science',
+    start: '2023',
+    end: 'Present',
+    id: 'edu3',
+  },
+]
+
+export const COMPLETED_EDUCATION: CompletedEducation[] = [
+  {
+    institution: 'Portuguese Medical Association',
+    degree: 'Subspecialty in Interventional Neuroradiology / Endovascular Neurosurgery',
+    start: '2023',
+    end: '2023',
+    id: 'comp-edu1',
+  },
+  {
+    institution: 'Portuguese Medical Association',
+    degree: 'Health Management Qualification',
+    start: '2020',
+    end: '2020',
+    id: 'comp-edu2',
+  },
+  {
+    institution: 'Harvard Medical School',
+    degree: 'Clinical Scholars Research Training Program',
+    start: '2018',
+    end: '2020',
+    id: 'comp-edu3',
+  },
+  {
+    institution: 'Catholic Business School, Porto, Portugal',
+    degree: 'Postgraduate Degree in Health Management',
+    start: '2010',
+    end: '2011',
+    id: 'comp-edu4',
   },
 ]
 
