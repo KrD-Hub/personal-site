@@ -11,6 +11,7 @@ import {
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
 import Link from 'next/link'
+import Image from 'next/image'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   PROJECTS,
@@ -19,6 +20,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
   ONGOING_STUDIES,
+  COMPLETED_EDUCATION,
 } from './data'
 
 // Define the WorkExperience type locally since it's not exported from data.ts
@@ -116,18 +118,25 @@ function ProjectImage({ src, alt }: ProjectImageProps) {
       }}
     >
       <MorphingDialogTrigger>
-        <img
+        <Image
           src={src}
           alt={alt}
+          width={640}
+          height={360}
           className="aspect-video w-full cursor-zoom-in rounded-xl object-cover"
+          priority={false}
+          quality={85}
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
         <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <img
+          <Image
             src={src}
             alt={alt}
+            width={800}
+            height={600}
             className="aspect-video h-[50vh] w-full rounded-xl object-contain md:h-[70vh]"
+            quality={95}
           />
         </MorphingDialogContent>
         <MorphingDialogClose
@@ -271,6 +280,7 @@ export default function Personal() {
           {[
             WORK_EXPERIENCE.find(job => job.id === 'work1'), // Head of Neuro Intervention
             WORK_EXPERIENCE.find(job => job.id === 'work2'), // São João
+            WORK_EXPERIENCE.find(job => job.id === 'work7'), // INESC TEC - investigador convidado
             WORK_EXPERIENCE.find(job => job.id === 'work6'), // Researcher Team Leader - moved here
             WORK_EXPERIENCE.find(job => job.id === 'work3'), // Coimbra
             WORK_EXPERIENCE.find(job => job.id === 'work4'), // Clinical Research Training
@@ -365,6 +375,40 @@ export default function Personal() {
                 </div>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 text-right">
                   {study.start} - {study.end}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-3 text-lg font-medium">Qualifications & Certifications</h3>
+        <div className="flex flex-col space-y-2">
+          {COMPLETED_EDUCATION.map((education) => (
+            <div
+              className="relative overflow-hidden rounded-xl bg-white p-4 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-800"
+              key={education.id}
+            >
+              <div className="relative flex w-full flex-row justify-between">
+                <div>
+                  <h4 className="font-medium text-base text-zinc-900 dark:text-zinc-100">
+                    {education.degree} {education.field && `in ${education.field}`}
+                  </h4>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    {education.institution}
+                  </p>
+                  {education.description && (
+                    <p className="text-xs text-zinc-600 dark:text-zinc-500 mt-1">
+                      {education.description}
+                    </p>
+                  )}
+                </div>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 text-right whitespace-nowrap">
+                  {education.start} {education.start !== education.end ? `- ${education.end}` : ''}
                 </p>
               </div>
             </div>
