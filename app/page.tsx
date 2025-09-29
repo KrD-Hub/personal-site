@@ -425,6 +425,9 @@ export default function Personal() {
         <p className="mb-4 text-base text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at <a href={`mailto:${EMAIL}`} className="underline hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors duration-300">{EMAIL}</a>
         </p>
+        <p className="mb-4 text-base text-zinc-600 dark:text-zinc-400">
+          Fluent in Portuguese, French, English, and Spanish.
+        </p>
         <div className="flex flex-row items-center gap-3">
           {SOCIAL_LINKS.map((social) => (
             <a
