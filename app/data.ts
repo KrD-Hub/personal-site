@@ -93,7 +93,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     company: 'Centro Hospitalar Universitário São João, Porto, Portugal',
     title: 'Assistant Physician, Neuroradiology Department',
     start: '2018',
-    end: 'Present',
+    end: '2025',
     link: '#',
     id: 'work2',
   },
