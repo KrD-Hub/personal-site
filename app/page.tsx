@@ -283,7 +283,6 @@ export default function Personal() {
             WORK_EXPERIENCE.find(job => job.id === 'work7'), // INESC TEC - investigador convidado
             WORK_EXPERIENCE.find(job => job.id === 'work6'), // Researcher Team Leader - moved here
             WORK_EXPERIENCE.find(job => job.id === 'work3'), // Coimbra
-            WORK_EXPERIENCE.find(job => job.id === 'work4'), // Clinical Research Training
             WORK_EXPERIENCE.find(job => job.id === 'work5'), // Fellowship
           ].filter((job): job is WorkExperience => job !== undefined)
            .map((job) => (

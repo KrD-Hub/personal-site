@@ -122,14 +122,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work3',
   },
   {
-    company: 'Harvard Medical School',
-    title: 'Clinical Scholars Research Training Program',
-    start: '2017',
-    end: '2019',
-    link: '#',
-    id: 'work4',
-  },
-  {
     company: 'Hopital Erasme',
     title: 'Fellowship in Endovascular Neurosurgery',
     start: '2014',
@@ -184,8 +176,8 @@ export const COMPLETED_EDUCATION: CompletedEducation[] = [
   {
     institution: 'Harvard Medical School',
     degree: 'Clinical Scholars Research Training Program',
-    start: '2018',
-    end: '2020',
+    start: '2017',
+    end: '2019',
     id: 'comp-edu3',
   },
   {
